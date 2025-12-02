@@ -1,0 +1,227 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: linear-gradient(135deg, #2c5aa0 0%, #4a7bc8 100%);
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    flex: 1;
+    height: calc(100vh - 120px);
+    gap: 0;
+}
+
+.left-column {
+    background: white;
+    border-right: 2px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.center-column {
+    background: white;
+}
+
+.main-map {
+    width: 100%;
+    height: 100%;
+}
+
+.right-column {
+    background: white;
+    border-left: 2px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.chart-section {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.chart-section h2 {
+    color: #2c5aa0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.chart-placeholder {
+    
+    height: 200px;
+    width: 250px;
+    
+    
+    
+}
+
+.info-section {
+    padding: 20px;
+    flex: 1;
+}
+
+.info-section h2 {
+    color: #2c5aa0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.info-section p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Кнопка QGIS - синий цвет, не выделяющийся */
+.qgis-btn {
+    width: 100%;
+    padding: 10px;
+    background: #4a7bc8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.qgis-btn:hover {
+    background: #3a6bb8;
+}
+
+.controls-section {
+    padding: 20px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.controls-section h2 {
+    color: #2c5aa0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.layer-group {
+    margin-bottom: 20px;
+}
+
+.layer-group h3 {
+    color: #495057;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.layer-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.control-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.control-item input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #6c757d;
+    border-radius: 3px;
+    background: white;
+}
+
+.control-item input:checked + .checkmark {
+    background: #2c5aa0;
+    border-color: #2c5aa0;
+}
+
+.control-item input:checked + .checkmark:after {
+    content: "✓";
+    color: white;
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+.legend-section {
+    padding: 20px;
+    flex: 1;
+}
+
+.legend-section h2 {
+    color: #2c5aa0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.legend-group {
+    margin-bottom: 20px;
+}
+
+.legend-group h3 {
+    color: #495057;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.legend-items {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.legend-label {
+    font-size: 0.85rem;
+    color: #495057;
+}
+
+.footer {
+    background: #343a40;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}

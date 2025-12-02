@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-картографирование - Древостой Верещагинского МО</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@8.2.0/ol.css">
+    <script src="https://cdn.jsdelivr.net/npm/ol@8.2.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header class="header">
+        <h1>Характеристика лесных насаждений Верещагинского МО</h1>
+    </header>
+
+    <main class="main-container">
+        <section class="left-column">
+            <div class="chart-section">
+                <h2>Средние значения NBR во временной выборке</h2>
+                <div class="chart-placeholder">
+                    <img src="./grap_2.png" style="width: 400px; height: 200px;"> 
+            
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h2>Краткая характеристика индекса</h2>
+                <p> Индекс NBR (Normalized Burn Ratio) имеет значения от -1 до 1, то есть значения близкие к 1 отображают здоровую растительность, а те значения, что стремяться к 0 отображают поврежденную или мертвую растительность. Тем самым можно сказать, что полигоны имеющие значения индекса близкие к нулю могут отображать поврежденные лесные насаждения. Это объясняется тем, использование SWIR диапазона делает индекс более чувствительным к содержанию влаги в растительности, что позволяет выявлять водный стресс деревьев на ранних стадиях, до появления видимых признаков усыхания.</p>
+                
+                <button> <a href="./qgis2web_2025_12_01-20_56_46_827722/map_2.html" class="qgis-btn"> Развернуть карту на весь экран</a>               
+                </button>
+            </div>
+        </section>
+
+        <section class="center-column">
+            <div id="mainMap" class="main-map"></div>
+        </section>
+
+        <section class="right-column">
+            <div class="controls-section">
+                <h2>Управление слоями</h2>
+                
+                <div class="layer-group">
+                    <h3>Базовые карты</h3>
+                    <div class="layer-controls">
+                        <label class="control-item">
+                            <input type="checkbox" id="osm-layer" checked>
+                            <span class="checkmark"></span>
+                            OpenStreetMap
+                        </label>
+                        <label class="control-item">
+                            <input type="checkbox" id="google-layer">
+                            <span class="checkmark"></span>
+                            Google Satellite Hybrid
+                        </label>
+                    </div>
+                </div>
+
+                <div class="layer-group">
+                    <h3>Векторные слои</h3>
+                    <div class="layer-controls">
+                        <label class="control-item">
+                            <input type="checkbox" id="hbr-layer" checked>
+                            <span class="checkmark"></span>
+                            Индекс NBR
+                        </label>
+                        <label class="control-item">
+                            <input type="checkbox" id="trees-layer" checked>
+                            <span class="checkmark"></span>
+                            Породы деревьев
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="legend-section">
+                <h2>Легенда карты</h2>
+                
+                <div class="legend-group">
+                    <h3>Среднее начения индекса NBR с 2016 по 2024 г.</h3>
+                    <div id="hbr-legend" class="legend-items"></div>
+                </div>
+
+                <div class="legend-group">
+                    <h3>Породы деревьев</h3>
+                    <div id="tree-legend" class="legend-items"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 учебный проект по веб-картографированию</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
